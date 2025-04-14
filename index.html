@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VastraSetu - Tradition Meets Trends</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <nav>
+    <h1>VastraSetu</h1>
+    <ul class="nav-links">  
+      <li><a href="#">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="#">Collections</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="#">Cart</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Coming Soon Section -->
+  <div class="main-content">
+    <div class="coming-soon-container">
+      <h2>Our Website is Coming Soon!</h2>
+      <p>We’re working hard to bring you the best shopping experience.</p>
+      <!-- Countdown Timer -->
+      <div id="countdown"></div>
+      <!-- Call to Action -->
+      <p class="cta">Be the first to know! <a href="#">Subscribe Now</a></p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>Made with ❤️ in India | © 2025 VastraSetu. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Countdown Timer
+    const countdownDate = new Date("Dec 31, 2025 00:00:00").getTime();
+    const countdownFunction = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = countdownDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+      if (distance < 0) {
+        clearInterval(countdownFunction);
+        document.getElementById("countdown").innerHTML = "WE'RE LIVE!";
+      }
+    }, 1000);
+  </script>
+
+</body>
+</html>
